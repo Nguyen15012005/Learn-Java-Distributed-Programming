@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+' --- Enumeration ---
+enum DoseStatus <<enumeration>> {
+    SCHEDULED
+    COMPLETED
+    CANCELLED
+    MISSED
+}
+
+' --- Classes ---
+abstract class Person <<abstract>> {
+    # id: String {id}
+    # fullName: String
+    # dob: LocalDate
+    # gender: String
+    # height: double
+    # weight: double
+    + Person()
+}
+
+class Adult {
+    - identityNumber: String
+    - occupation: String
+    + Adult()
+}
+
+class Child {
+    - guardianName: String
+    + Child()
+}
+
+class Vaccine {
+    - id: String {id}
+    - name: String
+    - manufacturer: String
+    - expirationDate: LocalDate
+    + Vaccine()
+}
+
+class Record <<association>> {
+    - id: long {id}
+    - injectionDate: LocalDate
+    - doseNumber: int
+    - status: DoseStatus
+    + Record()
+}
+
+' --- Relationships ---
+
+' Kế thừa (Inheritance)
+Adult -up-|> Person
+Child -up-|> Person
+
+' Quan hệ n-n giữa Vaccine và Person với Association Class là Record
+Vaccine "*" - "*" Person : -persons
+(Vaccine, Person) .. Record
+'note right on link: -vaccines
+'
+'' Quan hệ giữa Record và Enum
+'Record -> DoseStatus
+
+@enduml

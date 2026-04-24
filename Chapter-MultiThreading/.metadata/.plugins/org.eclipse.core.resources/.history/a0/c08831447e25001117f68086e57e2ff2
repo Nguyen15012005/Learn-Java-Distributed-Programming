@@ -1,0 +1,215 @@
+package function;
+
+import java.io.FileInputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
+import entity.Question;
+import entity.Quiz;
+
+public class QuizUtil {
+	
+//		START_OBJECT	bắt đầu {
+//		END_OBJECT	kết thúc }
+//		START_ARRAY	bắt đầu [
+//		END_ARRAY	kết thúc ]
+//		KEY_NAME	tên field
+//		VALUE_STRING	giá trị string
+//		VALUE_NUMBER	số
+//		VALUE_TRUE/FALSE	boolean
+	public List<Quiz> listQuizzes(String categoryId) throws Exception {
+	    List<Quiz> list = new ArrayList<>();
+
+	    JsonParser parser = Json.createParser(
+	            new FileInputStream("data/data.json")
+	    );
+
+	    String key = "";
+	    String quiz_id = "";
+	    String name = "";
+	    int score = 0;
+	    String categoryID = "";
+
+	    // 🔥 question
+	    List<Question> questions = new ArrayList<>();
+	    String question_id = "";
+	    String text = "";
+	    String correct_answer = "";
+	    List<String> tempOptions = new ArrayList<>();
+
+	    boolean inQuestions = false;
+
+	    while (parser.hasNext()) {
+	        Event event = parser.next();
+
+	        switch (event) {
+
+	            case KEY_NAME:
+	                key = parser.getString();
+
+	                if (key.equals("questions")) {
+	                    inQuestions = true;
+	                }
+	                break;
+
+	            case START_OBJECT:
+	                if (inQuestions) {
+	                    // reset question
+	                    question_id = "";
+	                    text = "";
+	                    correct_answer = "";
+	                    tempOptions = new ArrayList<>();
+	                }
+	                break;
+
+	            case VALUE_STRING:
+
+	                if (key.equals("quiz_id")) {
+	                    quiz_id = parser.getString();
+	                }
+
+	                else if (key.equals("name") && !inQuestions) {
+	                    name = parser.getString();
+	                }
+
+	                else if (key.equals("category_id")) {
+	                    categoryID = parser.getString();
+	                }
+
+	                // 🔥 QUESTION
+	                else if (inQuestions && key.equals("question_id")) {
+	                    question_id = parser.getString();
+	                }
+
+	                else if (inQuestions && key.equals("text")) {
+	                    text = parser.getString();
+	                }
+
+	                else if (inQuestions && key.equals("correct_answer")) {
+	                    correct_answer = parser.getString();
+	                }
+
+	                else if (inQuestions && key.equals("options")) {
+	                    tempOptions.add(parser.getString());
+	                }
+
+	                break;
+
+	            case VALUE_NUMBER:
+	                if (key.equals("score")) {
+	                    score = parser.getInt();
+	                }
+	                break;
+
+	            case END_OBJECT:
+
+	                // 🔥 kết thúc 1 question
+	                if (inQuestions && !question_id.equals("")) {
+	                    Question q = new Question();
+	                    q.setQuestion_Id(question_id);
+	                    q.setText(text);
+	                    q.setCorrect_Answer(correct_answer);
+
+	                    // List → String
+	                    q.setOptions(String.join(", ", tempOptions));
+
+	                    questions.add(q);
+	                }
+
+	                // 🔥 kết thúc 1 quiz
+	                if (!inQuestions && !quiz_id.equals("")) {
+	                    if (categoryID.equals(categoryId)) {
+	                        Quiz quiz = new Quiz();
+	                        quiz.setQuiz_id(quiz_id);
+	                        quiz.setName(name);
+	                        quiz.setScore(score);
+
+	                        // 🔥 gắn question vào quiz
+	                        quiz.setQuestion(questions);
+
+	                        list.add(quiz);
+	                    }
+
+	                    // reset cho quiz mới
+	                    questions = new ArrayList<>();
+	                }
+
+	                break;
+
+	            case END_ARRAY:
+	                if (inQuestions) {
+	                    inQuestions = false;
+	                }
+	                break;
+
+	            default:
+	                break;
+	        }
+	    }
+
+	    parser.close();
+	    return list;
+	}
+	 
+	
+	 
+	 public void writeToFile(List<Quiz> list) throws Exception{
+		 JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+		 for(Quiz q : list) {
+			 JsonObject obj = Json.createObjectBuilder()
+					 .add("quiz_id", q.getQuiz_id())
+					 .add("name", q.getName())
+					 .add("score", q.getScore())
+					 .build();
+			 
+			 arrayBuilder.add(obj);
+		 }
+		 
+		 JsonArray arr = arrayBuilder.build();
+		 
+		 PrintWriter out = new PrintWriter("data/nguyen23640731.json");
+		 out.println(arr.toString());
+		 out.close();
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+}

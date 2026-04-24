@@ -1,0 +1,36 @@
+package function;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.json.Json;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
+import entity.Quiz;
+
+public class QuizUtil {
+	
+	
+	 public List<Quiz> listQuizzes(String categoryId) throws Exception {
+		 List<Quiz> list = new ArrayList<Quiz>();
+		 
+		 JsonParser parser = Json.createParser(
+				 new FileInputStream("data/json")
+		 );
+		 
+		 String key ="";
+		 String quiz_id ="";
+		 String name ="";
+		 int score = 0;
+//		 id can loc
+		 String categoryID ="";
+		 
+		 while (parser.hasNext()) {
+			 Event event = parser.next();
+		 }
+		return null;
+		 
+	 }
+}

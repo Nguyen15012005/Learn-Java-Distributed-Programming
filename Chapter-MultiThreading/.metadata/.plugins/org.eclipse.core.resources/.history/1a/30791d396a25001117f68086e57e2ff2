@@ -1,0 +1,37 @@
+package main;
+
+import java.util.ArrayList;
+
+import entity.State;
+import function.IStateUtil;
+import function.StateUtil;
+
+public class Main {
+	public static void main(String[] args) {
+		StateUtil util = new IStateUtil();
+			
+			
+//		State state = util.findByAb("Ak");
+//		
+//		if(state == null) {
+//			System.out.println("Không tìm thấy");
+//		}
+//		else {
+//			System.out.println("Tìm thấy State: \n" + state);
+//		}
+		
+		ArrayList<State> list = util.findByYear(2026);
+		int count = 0;
+		if(list.isEmpty()) {
+			System.out.println("Không có năm nào trước năm 2026");
+		}
+		else {
+			for(State states : list) {
+				System.out.println("Tìm thấy State: \n" + states);
+				count++;
+			}
+			System.out.println("So State truoc 2026 la: "+ count + "State");
+		}
+		util.close();
+	}
+}

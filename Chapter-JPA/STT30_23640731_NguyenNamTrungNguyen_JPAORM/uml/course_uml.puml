@@ -1,0 +1,87 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Person <<abstract>> {
+    # id : String {id}
+    # firstName : String
+    # lastName : String
+    + Person()
+}
+
+class Student {
+    - enrollmentDate : LocalDateTime
+    + Student()
+}
+
+class Instructor {
+    - hireDate : LocalDateTime
+    + Instructor()
+}
+
+abstract class Course <<abstract>> {
+    # id : String {id}
+    # title : String
+    # credits : Integer
+    + Course()
+}
+
+class OnlineCourse {
+    - url : String
+    + OnlineCourse()
+}
+
+class OnsiteCourse {
+    - days : String
+    - location : String
+    - time : LocalDateTime
+    + OnsiteCourse()
+}
+
+class Department {
+    - id : String {id}
+    - name : String
+    - budget : Double
+    - startDate : LocalDateTime
+    - administrator : String
+    + Department()
+}
+
+class Enrollment <<association>> {
+    - semester : String {id}
+    - grade : Double
+    + Enrollment()
+}
+
+class OfficeAssignment {
+    - id: String {id}
+    - location : String
+    - timestamp : LocalDateTime
+    + OfficeAssignment()
+}
+
+' --- Quan hệ kế thừa ---
+Person <|-- Student
+Person <|-- Instructor
+Course <|-- OnlineCourse
+Course <|-- OnsiteCourse
+
+' --- Quan hệ giữa các thực thể ---
+Department "1" -- "0..*" Course : -courses
+
+Instructor "0..*" -- "0..*" Course : teaches
+
+Student "0..*" -- "0..*" Course : enrolls
+(Student, Course) .. Enrollment
+
+' --- Quan hệ môn học tiên quyết ---
+Course "0..*" -- "0..*" Course : prerequisites >
+
+' --- Quan hệ 1-1 ---
+Instructor "1" -- "0..1" OfficeAssignment : assigned to >
+
+' --- Ghi chú ---
+note right of Enrollment
+  id = {studentId, courseId, semester}
+end note
+
+@enduml

@@ -1,0 +1,15 @@
+package main;
+
+import java.util.List;
+
+import entity.Quiz;
+import function.QuizUtil;
+
+public class Main {
+	public static void main(String[] args) {
+		QuizUtil quizUtil = new QuizUtil();
+		
+		List<Quiz> list = new QuizUtil();
+		
+	}
+}

@@ -1,0 +1,75 @@
+package main;
+
+import java.io.*;
+import javax.json.*;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
+import entity.Employee;
+
+public class DecodeJson {
+
+    public static void main(String[] args) throws Exception {
+        decodeObjectModel();
+        decodeStreaming();
+    }
+
+    // ✅ Object Model
+    public static void decodeObjectModel() throws Exception {
+        InputStream in = new FileInputStream("json/emp.json");
+        JsonReader reader = Json.createReader(in);
+        JsonObject jo = reader.readObject();
+
+        JsonNumber id = jo.getJsonNumber("id");
+        String name = jo.getString("name");
+        JsonNumber sal = jo.getJsonNumber("salary");
+
+        Employee emp = new Employee(
+                id.longValue(),
+                name,
+                sal.doubleValue()
+        );
+
+        System.out.println("Object Model:");
+        System.out.println(emp);
+    }
+
+    // ✅ Streaming API
+    public static void decodeStreaming() {
+        final String result = "{\"name\":\"Falco\",\"age\":3,\"bitable\":false}";
+        final JsonParser parser = Json.createParser(new StringReader(result));
+
+        System.out.println("\nStreaming:");
+
+        while (parser.hasNext()) {
+            Event event = parser.next();
+
+            switch (event) {
+                case KEY_NAME:
+                    System.out.println("Key: " + parser.getString());
+                    break;
+
+                case VALUE_STRING:
+                    System.out.println("String: " + parser.getString());
+                    break;
+
+                case VALUE_NUMBER:
+                    System.out.println("Number: " + parser.getInt());
+                    break;
+
+                case VALUE_TRUE:
+                    System.out.println("true");
+                    break;
+
+                case VALUE_FALSE:
+                    System.out.println("false");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        parser.close();
+    }
+}

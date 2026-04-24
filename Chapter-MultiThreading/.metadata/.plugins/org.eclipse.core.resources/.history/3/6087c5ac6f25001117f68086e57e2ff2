@@ -1,0 +1,8 @@
+package entity;
+
+public class Question {
+	private String question_Id;
+	private String text;
+	private String options;
+	private String correct_Answer;
+}

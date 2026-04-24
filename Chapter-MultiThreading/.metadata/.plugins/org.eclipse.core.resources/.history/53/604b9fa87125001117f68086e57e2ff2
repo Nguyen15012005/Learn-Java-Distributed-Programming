@@ -1,0 +1,27 @@
+package entity;
+
+public class Category {
+	private String category_Id;
+	private String name;
+	public Category(String category_Id, String name) {
+		super();
+		this.category_Id = category_Id;
+		this.name = name;
+	}
+	public Category() {
+		super();
+	}
+	public String getCategory_Id() {
+		return category_Id;
+	}
+	public void setCategory_Id(String category_Id) {
+		this.category_Id = category_Id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}

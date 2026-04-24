@@ -1,0 +1,18 @@
+package exercise03;
+
+import entity.State;
+
+public class Exercise03 {
+	public static void main(String[] args) {
+		StateUtil util = new StateUtil();
+		
+		State state = util.findByAb("ABC");
+		
+		if(state == null) {
+			System.out.println("Không tìm thấy");
+		}
+		else {
+			System.out.println(state);
+		}
+	}
+}

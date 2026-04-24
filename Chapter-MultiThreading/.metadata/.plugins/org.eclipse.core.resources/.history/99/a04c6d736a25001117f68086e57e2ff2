@@ -1,0 +1,87 @@
+package function;
+
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonValue;
+
+import entity.State;
+
+public class StateUtil implements IStateUtil{
+	private JsonReader reader;
+	
+	public StateUtil() {
+		try {
+			reader = Json.createReader(new FileReader("data/tuan03-use-states.json"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+	public State findByAb(String abb) {
+		JsonArray ja = reader.readArray();
+		for(JsonValue jv : ja) {
+			if(jv instanceof JsonObject) {
+				JsonObject jo = jv.asJsonObject();
+				
+				String abbreviation = jo.getString("Abbreviation");
+				
+				if(abbreviation.equalsIgnoreCase(abb)) {
+					State state = new State(jo.getJsonNumber("ID").longValue(),
+							jo.getString("StateName"),
+							jo.getString("Abbreviation"), 
+							jo.getString("Capital"), 
+							jo.getInt("Statehood"));
+					
+					return state;
+							
+				}
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public ArrayList<State> findByYear(int year) {
+		ArrayList<State> list = new ArrayList<State>();
+		JsonArray ja = reader.readArray();
+		for(JsonValue jv : ja) {
+			if(jv instanceof JsonObject) {
+				JsonObject jo = jv.asJsonObject();
+				int statehood = jo.getInt("Statehood");
+				
+				if(year > statehood) {
+					State state = new State(jo.getJsonNumber("ID").longValue(),
+							jo.getString("StateName"),
+							jo.getString("Abbreviation"),
+							jo.getString("Capital"),
+							jo.getInt("Statehood")
+					);
+					list.add(state);
+				}
+			}
+		}
+		return list;
+		return null;
+	}
+
+//	@Override
+//	public State findByAb(String abb) {
+//		
+//	}
+//
+////	in ra nhung nam thanh lap < nam nhap
+//	@Override
+//	public ArrayList<State> findByYear(int year){
+//	
+//	}
+//	
+	public void close() {
+		reader.close();
+	}
+
+}

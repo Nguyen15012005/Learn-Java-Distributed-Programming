@@ -1,0 +1,54 @@
+package entity;
+
+import java.util.ArrayList;
+
+public class Quiz {
+	private String quiz_id;
+	private String name;
+	private int score;
+	private ArrayList<Question> question;
+	private Category category;
+	public Quiz(String quiz_id, String name, int score, ArrayList<Question> question, Category category) {
+		super();
+		this.quiz_id = quiz_id;
+		this.name = name;
+		this.score = score;
+		this.question = question;
+		this.category = category;
+	}
+	public Quiz() {
+		super();
+	}
+	public String getQuiz_id() {
+		return quiz_id;
+	}
+	public void setQuiz_id(String quiz_id) {
+		this.quiz_id = quiz_id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
+	}
+	public ArrayList<Question> getQuestion() {
+		return question;
+	}
+	public void setQuestion(ArrayList<Question> question) {
+		this.question = question;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
+}

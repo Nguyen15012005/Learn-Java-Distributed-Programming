@@ -1,0 +1,12 @@
+package iuh.fit.model;
+
+/**
+ * Admin 4/6/2025
+ **/
+public class ClassInfo {
+    private String name;
+    private String teacher;
+    private int room;
+    private String startTime;
+    private String endTime;
+}

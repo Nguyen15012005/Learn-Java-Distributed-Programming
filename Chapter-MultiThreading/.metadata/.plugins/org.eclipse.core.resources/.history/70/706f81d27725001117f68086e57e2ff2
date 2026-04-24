@@ -1,0 +1,14 @@
+package function;
+
+import java.util.List;
+
+import entity.Quiz;
+
+public class QuizUtil {
+	
+	
+	 public List<Quiz> listQuizzes(String categoryId) throws Exception {
+		return null;
+		 
+	 }
+}

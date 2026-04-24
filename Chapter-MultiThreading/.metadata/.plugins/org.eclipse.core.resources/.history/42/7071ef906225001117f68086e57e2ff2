@@ -1,0 +1,16 @@
+package exercise03;
+
+import java.util.ArrayList;
+
+import entity.State;
+
+public class StateUtil {
+	
+	public State findByAb(String abb) {
+		return null;
+	}
+
+	public ArrayList<State> findByYear(int year){
+		return null;
+	}
+}

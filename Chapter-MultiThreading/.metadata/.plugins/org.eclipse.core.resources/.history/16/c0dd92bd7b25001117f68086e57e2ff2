@@ -1,0 +1,131 @@
+package function;
+
+import java.io.FileInputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
+import entity.Quiz;
+
+public class QuizUtil {
+	
+//		START_OBJECT	bắt đầu {
+//		END_OBJECT	kết thúc }
+//		START_ARRAY	bắt đầu [
+//		END_ARRAY	kết thúc ]
+//		KEY_NAME	tên field
+//		VALUE_STRING	giá trị string
+//		VALUE_NUMBER	số
+//		VALUE_TRUE/FALSE	boolean
+	 public List<Quiz> listQuizzes(String categoryId) throws Exception {
+		 List<Quiz> list = new ArrayList<Quiz>();
+		 
+		 JsonParser parser = Json.createParser(
+				 new FileInputStream("data/data.json")
+		 );
+		 
+		 String key ="";
+		 String quiz_id ="";
+		 String name ="";
+		 int score = 0;
+//		 id can loc
+		 String categoryID ="";
+		 
+		 while (parser.hasNext()) {
+			 Event event = parser.next();
+			 switch(event) {
+			 	case KEY_NAME:
+			 		key = parser.getString();
+			 		break;
+			 	case VALUE_STRING:
+			 		if(key.equals("quiz_id")) {
+			 			quiz_id = parser.getString();
+			 		}
+			 		else if(key.equals("name")) {
+			 			name = parser.getString();
+			 		}
+			 		else if(key.equals("category_id")) {
+			 			categoryID = parser.getString();
+			 			if(categoryID.equals(categoryId)) {
+			 				Quiz q = new Quiz();
+			 				q.setQuiz_id(quiz_id);
+			 				q.setName(name);
+			 				q.setScore(score);
+			 				list.add(q);
+			 			}
+			 			
+			 		}
+			 		break;
+			 	case VALUE_NUMBER:
+			 		if(key.equals("score")){
+			 			score = parser.getInt();
+			 		}
+			 		break;
+			 	default:
+			 		break;
+			 }
+		 }
+		 parser.close();
+		 return list;
+		 
+	 }
+	 
+	 public void writeToFile(List<Quiz> list) throws Exception{
+		 JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+		 for(Quiz q : list) {
+			 JsonObject obj = Json.createObjectBuilder()
+					 .add("quiz_id", q.getQuiz_id())
+					 .add("name", q.getName())
+					 .add("score", q.getScore())
+					 .build();
+			 
+			 arrayBuilder.add(obj);
+		 }
+		 
+		 JsonArray arr = arrayBuilder.build();
+		 
+		 PrintWriter out = new PrintWriter("nguyen23640731.json");
+		 out.println(arr.toString());
+		 out.close();
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+}

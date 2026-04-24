@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Readable"/>
+    <fullyQualifiedTypeName name="java.lang.Runnable"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="runnable.MyRunnable"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="exercise03.StateUtil"/>
+    <fullyQualifiedTypeName name="java.awt.Taskbar.State"/>
+    <fullyQualifiedTypeName name="javax.json.JsonValue"/>
+    <fullyQualifiedTypeName name="entity.State"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="function.IStateUtil"/>
+    <fullyQualifiedTypeName name="function.StateUtil"/>
+    <fullyQualifiedTypeName name="entity.Employee"/>
+    <fullyQualifiedTypeName name="javax.json.JsonObjectBuilder"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="entity.Category"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="javax.json.JsonReader"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="javax.json.stream.JsonParser"/>
+    <fullyQualifiedTypeName name="javax.json.Json"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.awt.Event"/>
+    <fullyQualifiedTypeName name="javax.json.stream.JsonParser.Event"/>
+    <fullyQualifiedTypeName name="function.QuizUtil"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="entity.Quiz"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="javax.json.JsonArrayBuilder"/>
+    <fullyQualifiedTypeName name="javax.json.JsonObject"/>
+    <fullyQualifiedTypeName name="javax.json.JsonArray"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="entity.Question"/>
+</qualifiedTypeNameHistroy>

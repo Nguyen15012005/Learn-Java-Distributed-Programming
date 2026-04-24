@@ -1,0 +1,29 @@
+package exercise03;
+
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import javax.json.Json;
+import javax.json.JsonReader;
+
+import entity.State;
+
+public class StateUtil {
+	private JsonReader reader;
+	
+	public StateUtil() {
+		reader = Json.createReader(new FileReader("data/tuan03-"))
+	}
+
+	public State findByAb(String abb) {
+		return null;
+	}
+
+	public ArrayList<State> findByYear(int year){
+		return null;
+	}
+	
+	public void close() {
+		reader.close();
+	}
+}
