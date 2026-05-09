@@ -2,10 +2,16 @@ package model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 public class OnsiteCourse extends Course{
 
     @Column(name = "Days")
@@ -15,5 +21,5 @@ public class OnsiteCourse extends Course{
     private String location;
 
     @Column(name = "Time")
-    private LocalDateTime time;
+    private LocalTime time;
 }
