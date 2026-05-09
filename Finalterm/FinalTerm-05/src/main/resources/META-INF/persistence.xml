@@ -5,6 +5,15 @@
              version="3.0">
     <persistence-unit name="mariadb">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>model.Instructor</class>
+        <class>model.OfficeAssignment</class>
+        <class>model.Person</class>
+        <class>model.Student</class>
+        <class>model.Course</class>
+        <class>model.Department</class>
+        <class>model.OnlineCourse</class>
+        <class>model.OnsiteCourse</class>
+        <class>model.StudentGrade</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver"

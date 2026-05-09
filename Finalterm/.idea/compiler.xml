@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="STT30_NguyenNamTrungNguyen_23640731__JPA_ORM_Socket" />
+        <module name="FinalTerm-03_Client" />
+        <module name="FinalTerm-02" />
+        <module name="FinalTerm-01" />
+        <module name="FinalTerm_5" />
+        <module name="FinalTerm-03" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

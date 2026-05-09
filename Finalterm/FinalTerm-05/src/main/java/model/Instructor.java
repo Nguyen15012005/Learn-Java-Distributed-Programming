@@ -1,10 +1,10 @@
 package model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author TrungNguyen
@@ -20,5 +20,8 @@ public class Instructor extends Person{
 
     @OneToOne(mappedBy = "instructor")
     private OfficeAssignment officeAssignment;
+
+    @ManyToMany(mappedBy = "instructors")
+    private Set<Course> courses = new HashSet<>();
 
 }

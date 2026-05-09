@@ -1,0 +1,31 @@
+package model;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+public class Department {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "DepartmentID")
+    private int id;
+
+    @Column(name = "Administrator")
+    private int administrator;
+
+    @Column(name = "Budget")
+    private double budget;
+
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "startDate")
+    private LocalDateTime startDate;
+
+    @OneToMany(mappedBy = "department")
+    private Set<Course> courses = new HashSet<>();
+}
