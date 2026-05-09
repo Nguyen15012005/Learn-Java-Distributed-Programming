@@ -1,0 +1,16 @@
+{
+    "enrollments": [
+        {
+            "studentId": "S001",
+            "name": "C001",
+            "semester": "2025A",
+            "grade": 8.5
+        },
+        {
+            "studentId": "S001",
+            "name": "C002",
+            "semester": "2025B",
+            "grade": 7.8
+        }
+    ]
+}

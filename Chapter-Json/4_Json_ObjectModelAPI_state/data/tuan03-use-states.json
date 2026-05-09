@@ -1,0 +1,394 @@
+[
+  {
+    "StateName": "Alabama",
+    "Abbreviation": "AL",
+    "Capital": "Montgomery",
+    "Statehood": 1819,
+    "ID": 1
+  },
+  {
+    "StateName": "Alaska",
+    "Abbreviation": "AK",
+    "Capital": "Juneau",
+    "Statehood": 1959,
+    "ID": 2
+  },
+  {
+    "StateName": "American Samoa",
+    "Abbreviation": "AS",
+    "Capital": "Pago Pago",
+    "Statehood": 1899,
+    "ID": 3
+  },
+  {
+    "StateName": "Arizona",
+    "Abbreviation": "AZ",
+    "Capital": "Phoenix",
+    "Statehood": 1912,
+    "ID": 4
+  },
+  {
+    "StateName": "Arkansas",
+    "Abbreviation": "AR",
+    "Capital": "Little Rock",
+    "Statehood": 1836,
+    "ID": 5
+  },
+  {
+    "StateName": "California",
+    "Abbreviation": "CA",
+    "Capital": "Sacramento",
+    "Statehood": 1850,
+    "ID": 6
+  },
+  {
+    "StateName": "Colorado",
+    "Abbreviation": "CO",
+    "Capital": "Denver",
+    "Statehood": 1876,
+    "ID": 7
+  },
+  {
+    "StateName": "Connecticut",
+    "Abbreviation": "CT",
+    "Capital": "Hartford",
+    "Statehood": 1788,
+    "ID": 8
+  },
+  {
+    "StateName": "Delaware",
+    "Abbreviation": "DE",
+    "Capital": "Dover",
+    "Statehood": 1787,
+    "ID": 9
+  },
+  {
+    "StateName": "Florida",
+    "Abbreviation": "FL",
+    "Capital": "Tallahassee",
+    "Statehood": 1845,
+    "ID": 10
+  },
+  {
+    "StateName": "Georgia",
+    "Abbreviation": "GA",
+    "Capital": "Atlanta",
+    "Statehood": 1788,
+    "ID": 11
+  },
+  {
+    "StateName": "Guam",
+    "Abbreviation": "GU",
+    "Capital": "Hagåtña Dededo",
+    "Statehood": 1898,
+    "ID": 12
+  },
+  {
+    "StateName": "Hawaii",
+    "Abbreviation": "HI",
+    "Capital": "Honolulu",
+    "Statehood": 1959,
+    "ID": 13
+  },
+  {
+    "StateName": "Idaho",
+    "Abbreviation": "ID",
+    "Capital": "Boise",
+    "Statehood": 1890,
+    "ID": 14
+  },
+  {
+    "StateName": "Illinois",
+    "Abbreviation": "IL",
+    "Capital": "Springfield",
+    "Statehood": 1818,
+    "ID": 15
+  },
+  {
+    "StateName": "Indiana",
+    "Abbreviation": "IN",
+    "Capital": "Indianapolis",
+    "Statehood": 1816,
+    "ID": 16
+  },
+  {
+    "StateName": "Iowa",
+    "Abbreviation": "IA",
+    "Capital": "Des Moines",
+    "Statehood": 1846,
+    "ID": 17
+  },
+  {
+    "StateName": "Kansas",
+    "Abbreviation": "KS",
+    "Capital": "Topeka",
+    "Statehood": 1861,
+    "ID": 18
+  },
+  {
+    "StateName": "Kentucky",
+    "Abbreviation": "KY",
+    "Capital": "Frankfort",
+    "Statehood": 1792,
+    "ID": 19
+  },
+  {
+    "StateName": "Louisiana",
+    "Abbreviation": "LA",
+    "Capital": "Baton Rouge",
+    "Statehood": 1812,
+    "ID": 20
+  },
+  {
+    "StateName": "Maine",
+    "Abbreviation": "ME",
+    "Capital": "Augusta",
+    "Statehood": 1820,
+    "ID": 21
+  },
+  {
+    "StateName": "Maryland",
+    "Abbreviation": "MD",
+    "Capital": "Annapolis",
+    "Statehood": 1788,
+    "ID": 22
+  },
+  {
+    "StateName": "Massachusetts",
+    "Abbreviation": "MA",
+    "Capital": "Boston",
+    "Statehood": 1788,
+    "ID": 23
+  },
+  {
+    "StateName": "Michigan",
+    "Abbreviation": "MI",
+    "Capital": "Lansing",
+    "Statehood": 1837,
+    "ID": 24
+  },
+  {
+    "StateName": "Minnesota",
+    "Abbreviation": "MN",
+    "Capital": "Saint Paul",
+    "Statehood": 1858,
+    "ID": 25
+  },
+  {
+    "StateName": "Mississippi",
+    "Abbreviation": "MS",
+    "Capital": "Jackson",
+    "Statehood": 1817,
+    "ID": 26
+  },
+  {
+    "StateName": "Missouri",
+    "Abbreviation": "MO",
+    "Capital": "Jefferson City",
+    "Statehood": 1821,
+    "ID": 27
+  },
+  {
+    "StateName": "Montana",
+    "Abbreviation": "MT",
+    "Capital": "Helena",
+    "Statehood": 1889,
+    "ID": 28
+  },
+  {
+    "StateName": "Nebraska",
+    "Abbreviation": "NE",
+    "Capital": "Lincoln",
+    "Statehood": 1867,
+    "ID": 29
+  },
+  {
+    "StateName": "Nevada",
+    "Abbreviation": "NV",
+    "Capital": "Carson City",
+    "Statehood": 1864,
+    "ID": 30
+  },
+  {
+    "StateName": "New Hampshire",
+    "Abbreviation": "NH",
+    "Capital": "Concord",
+    "Statehood": 1788,
+    "ID": 31
+  },
+  {
+    "StateName": "New Jersey",
+    "Abbreviation": "NJ",
+    "Capital": "Trenton",
+    "Statehood": 1787,
+    "ID": 32
+  },
+  {
+    "StateName": "New Mexico",
+    "Abbreviation": "NM",
+    "Capital": "Santa Fe",
+    "Statehood": 1912,
+    "ID": 33
+  },
+  {
+    "StateName": "New York",
+    "Abbreviation": "NY",
+    "Capital": "Albany",
+    "Statehood": 1788,
+    "ID": 34
+  },
+  {
+    "StateName": "North Carolina",
+    "Abbreviation": "NC",
+    "Capital": "Raleigh",
+    "Statehood": 1789,
+    "ID": 35
+  },
+  {
+    "StateName": "North Dakota",
+    "Abbreviation": "ND",
+    "Capital": "Bismarck",
+    "Statehood": 1889,
+    "ID": 36
+  },
+  {
+    "StateName": "Northern Mariana Islands",
+    "Abbreviation": "MP",
+    "Capital": "Saipan",
+    "Statehood": 1947,
+    "ID": 37
+  },
+  {
+    "StateName": "Ohio",
+    "Abbreviation": "OH",
+    "Capital": "Columbus",
+    "Statehood": 1803,
+    "ID": 38
+  },
+  {
+    "StateName": "Oklahoma",
+    "Abbreviation": "OK",
+    "Capital": "Oklahoma City",
+    "Statehood": 1907,
+    "ID": 39
+  },
+  {
+    "StateName": "Oregon",
+    "Abbreviation": "OR",
+    "Capital": "Salem",
+    "Statehood": 1859,
+    "ID": 40
+  },
+  {
+    "StateName": "Pennsylvania",
+    "Abbreviation": "PA",
+    "Capital": "Harrisburg",
+    "Statehood": 1787,
+    "ID": 41
+  },
+  {
+    "StateName": "Puerto Rico",
+    "Abbreviation": "PR",
+    "Capital": "San Juan",
+    "Statehood": 1898,
+    "ID": 42
+  },
+  {
+    "StateName": "Rhode Island",
+    "Abbreviation": "RI",
+    "Capital": "Providence",
+    "Statehood": 1790,
+    "ID": 43
+  },
+  {
+    "StateName": "South Carolina",
+    "Abbreviation": "SC",
+    "Capital": "Columbia",
+    "Statehood": 1788,
+    "ID": 44
+  },
+  {
+    "StateName": "South Dakota",
+    "Abbreviation": "SD",
+    "Capital": "Pierre",
+    "Statehood": 1889,
+    "ID": 45
+  },
+  {
+    "StateName": "Tennessee",
+    "Abbreviation": "TN",
+    "Capital": "Nashville",
+    "Statehood": 1796,
+    "ID": 46
+  },
+  {
+    "StateName": "Texas",
+    "Abbreviation": "TX",
+    "Capital": "Austin",
+    "Statehood": 1845,
+    "ID": 47
+  },
+  {
+    "StateName": "U.S. Virgin Islands",
+    "Abbreviation": "VI",
+    "Capital": "Charlotte Amalie",
+    "Statehood": 1917,
+    "ID": 48
+  },
+  {
+    "StateName": "Utah",
+    "Abbreviation": "UT",
+    "Capital": "Salt Lake City",
+    "Statehood": 1896,
+    "ID": 49
+  },
+  {
+    "StateName": "Vermont",
+    "Abbreviation": "VT",
+    "Capital": "Montpelier",
+    "Statehood": 1791,
+    "ID": 50
+  },
+  {
+    "StateName": "Virginia",
+    "Abbreviation": "VA",
+    "Capital": "Richmond",
+    "Statehood": 1788,
+    "ID": 51
+  },
+  {
+    "StateName": "Washington",
+    "Abbreviation": "WA",
+    "Capital": "Olympia",
+    "Statehood": 1889,
+    "ID": 52
+  },
+  {
+    "StateName": "Washington D.C.",
+    "Abbreviation": "DC",
+    "Capital": "",
+    "Statehood": 0,
+    "ID": 53
+  },
+  {
+    "StateName": "West Virginia",
+    "Abbreviation": "WV",
+    "Capital": "Charleston",
+    "Statehood": 1863,
+    "ID": 54
+  },
+  {
+    "StateName": "Wisconsin",
+    "Abbreviation": "WI",
+    "Capital": "Madison",
+    "Statehood": 1848,
+    "ID": 55
+  },
+  {
+    "StateName": "Wyoming",
+    "Abbreviation": "WY",
+    "Capital": "Cheyenne",
+    "Statehood": 1890,
+    "ID": 56
+  }
+]
