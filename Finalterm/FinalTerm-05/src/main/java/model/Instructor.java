@@ -18,6 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
+@ToString(callSuper = true)
 public class Instructor extends Person{
 
     @Column(name = "HireDate")

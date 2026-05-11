@@ -14,7 +14,7 @@ public class JPAUtil {
 
     static {
         try{
-            emf = Persistence.createEntityManagerFactory("mariadb-pu");
+            emf = Persistence.createEntityManagerFactory("mariadb");
         } catch (Exception e) {
             throw new IllegalArgumentException(e.getMessage());
         }

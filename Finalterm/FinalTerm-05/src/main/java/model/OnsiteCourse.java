@@ -12,6 +12,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
+@ToString(callSuper = true)
 public class OnsiteCourse extends Course{
 
     @Column(name = "Days")

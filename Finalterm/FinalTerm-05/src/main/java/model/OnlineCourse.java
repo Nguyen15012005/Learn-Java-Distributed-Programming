@@ -9,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
+@ToString(callSuper = true)
 public class OnlineCourse extends Course{
 
     @Column(name = "URL")

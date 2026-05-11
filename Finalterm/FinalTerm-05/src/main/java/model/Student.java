@@ -20,6 +20,7 @@ import java.util.Set;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @Entity
+@ToString(callSuper = true)
 public class Student extends Person{
 
     @ToString.Exclude
