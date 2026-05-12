@@ -1,17 +1,17 @@
-package dao;
+package repository.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import model.Course;
 import model.Student;
 import util.JPAUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class StudentDao {
+public class StudentRepositoryImpl implements repository.StudentRepository {
 //    5. Tìm sinh viên (`Student`) có ngày nhập học nằm giữa `startDate` và `endDate`
-    public List<Student> findStudentByEnrollmentDateBetween(LocalDateTime startDate, LocalDateTime endDate){
+@Override
+public List<Student> findStudentByEnrollmentDateBetween(LocalDateTime startDate, LocalDateTime endDate){
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =
                     """

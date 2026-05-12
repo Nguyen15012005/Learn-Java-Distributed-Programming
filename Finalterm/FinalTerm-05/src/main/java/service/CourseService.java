@@ -1,5 +1,6 @@
 package service;
 
+import dto.CourseDTO;
 import model.Course;
 
 import java.rmi.Remote;
@@ -8,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface CourseService extends Remote {
-    List<Course> findCoursesByCreditsBetween(int minCredits, int maxCredits) throws RemoteException;
+    List<CourseDTO> findCoursesByCreditsBetween(int minCredits, int maxCredits) throws RemoteException;
 
-    List<Course> findCourseByDepartmentNameContaining(String deptName) throws RemoteException;
+    List<CourseDTO> findCourseByDepartmentNameContaining(String deptName) throws RemoteException;
 
-    Map<Course, Long> countStudentsByCourse() throws RemoteException;
+    Map<CourseDTO, Long> countStudentsByCourse() throws RemoteException;
 }

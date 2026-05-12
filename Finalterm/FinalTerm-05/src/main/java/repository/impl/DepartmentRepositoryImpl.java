@@ -1,4 +1,4 @@
-package dao;
+package repository.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -8,12 +8,12 @@ import util.JPAUtil;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class DepartmentDao {
+public class DepartmentRepositoryImpl implements repository.DepartmentRepository {
 
     //    4. Thống kê số khóa học theo khoa
+    @Override
     public Map<Department, Long> countCourseByDepartment(){
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =
@@ -37,7 +37,8 @@ public class DepartmentDao {
     }
 
 //    8. Tìm phòng ban (`Department`) có ngân sách lớn nhất
-    public List<Department> findDepartmentWithMaxBudget(){
+@Override
+public List<Department> findDepartmentWithMaxBudget(){
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =
                     """

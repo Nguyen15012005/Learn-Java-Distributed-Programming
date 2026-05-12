@@ -1,16 +1,16 @@
-package dao;
+package repository.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import model.OnlineCourse;
 import model.OnsiteCourse;
 import util.JPAUtil;
 
 import java.util.List;
 
-public class OnlineSiteDao {
+public class OnlineSiteRepositoryImpl implements repository.OnlineSiteRepository {
 //   9. Tìm khóa học tại chỗ (`OnsiteCourse`) có ngày học (`days`) chứa `dayKeyword`
-    public List<OnsiteCourse> findOnsiteCourseByDaysContaining(String dayKeyword){
+@Override
+public List<OnsiteCourse> findOnsiteCourseByDaysContaining(String dayKeyword){
 
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =

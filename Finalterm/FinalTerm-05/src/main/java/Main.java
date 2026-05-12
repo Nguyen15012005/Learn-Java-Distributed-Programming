@@ -1,9 +1,8 @@
-import dao.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
+import repository.*;
+import repository.impl.*;
 import util.JPAUtil;
-
-import java.time.LocalDateTime;
 
 /**
  * @author TrungNguyen
@@ -19,29 +18,26 @@ public class Main {
 
         em.getMetamodel().getEntities();
 
-        CourseDao courseDao = new CourseDao();
-//        courseDao.findCoursesByCreditsBetween(2, 3).forEach(System.out::println);
+        CourseRepository courseDao = new CourseRepositoryImpl();
 
 
-//        courseDao.findCourseByDepartmentNameContaining("Math").forEach(System.out::println);
 
-
-        OnlineCourseDao onlineCourseDao = new OnlineCourseDao();
+        OnlineCourseRepository onlineCourseDao = new OnlineCourseRepositoryImpl();
 //        onlineCourseDao.findOnlineCourseByUrlContainingAndCreditsGreaterThanEqual("Composition", 2).forEach(System.out::println);
 
-        DepartmentDao departmentDao = new DepartmentDao();
+        DepartmentRepository departmentDao = new DepartmentRepositoryImpl();
 //        departmentDao.countCourseByDepartment().forEach((k,v) -> System.out.println(k.getName() + ":" + v));
 
-        StudentDao studentDao = new StudentDao();
+        StudentRepository studentDao = new StudentRepositoryImpl();
 //        studentDao.findStudentByEnrollmentDateBetween(LocalDateTime.of(2001, 01, 01,00, 00), LocalDateTime.of(2022, 01, 01,00, 00)).forEach(System.out::println);
 
-        InstructorDao instructorDao = new InstructorDao();
+        InstructorRepository instructorDao = new InstructorRepositoryImpl();
 //        instructorDao.findInstructorByOfficeAssignmentTimestampBefore(LocalDateTime.of(2027, 01,01,00, 00)).forEach(System.out::println);
 
-//        courseDao.countStudentsByCourse().forEach((k,v)-> System.out.println(k.getTitle()  + ":" + v));
+
 //        departmentDao.findDepartmentWithMaxBudget().forEach(System.out::println);
 
-        OnlineSiteDao onlineSiteDao = new OnlineSiteDao();
+        OnlineSiteRepository onlineSiteDao = new OnlineSiteRepositoryImpl();
         onlineSiteDao.findOnsiteCourseByDaysContaining("MW").forEach(System.out::println);
 
 

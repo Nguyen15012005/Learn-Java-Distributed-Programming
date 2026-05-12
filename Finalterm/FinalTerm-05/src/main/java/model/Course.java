@@ -13,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public abstract class Course implements Serializable {
+public abstract class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include

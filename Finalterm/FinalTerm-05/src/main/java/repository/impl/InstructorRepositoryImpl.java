@@ -1,16 +1,16 @@
-package dao;
+package repository.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import model.Instructor;
-import model.Student;
 import util.JPAUtil;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class InstructorDao {
+public class InstructorRepositoryImpl implements repository.InstructorRepository {
     //6. Tìm giảng viên (`Instructor`) có thời điểm phân công văn phòng trước `timestamp`
+    @Override
     public List<Instructor> findInstructorByOfficeAssignmentTimestampBefore(LocalDateTime timestamp){
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =

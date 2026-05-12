@@ -1,38 +1,36 @@
 package service.impl;
 
-import dao.CourseDao;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.TypedQuery;
-import model.Course;
-import util.JPAUtil;
+import dto.CourseDTO;
+import mapper.CourseMapper;
+import repository.CourseRepository;
+import repository.impl.CourseRepositoryImpl;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CourseServiceImpl extends UnicastRemoteObject implements service.CourseService {
-    public final CourseDao courseDao;
+    public final CourseRepository courseRepository;
 
     public CourseServiceImpl() throws RemoteException {
-        courseDao = new CourseDao();
+        courseRepository = new CourseRepositoryImpl();
     }
 
     @Override
-    public List<Course> findCoursesByCreditsBetween(int minCredits, int maxCredits) throws RemoteException{
-        return courseDao.findCoursesByCreditsBetween(minCredits,maxCredits);
+    public List<CourseDTO> findCoursesByCreditsBetween(int minCredits, int maxCredits) throws RemoteException{
+        return courseRepository.findCoursesByCreditsBetween(minCredits,maxCredits).stream().map(CourseMapper::toDTO).toList();
     }
 
     @Override
-    public List<Course> findCourseByDepartmentNameContaining(String deptName)throws RemoteException{
-        return courseDao.findCourseByDepartmentNameContaining(deptName);
+    public List<CourseDTO> findCourseByDepartmentNameContaining(String deptName)throws RemoteException{
+        return courseRepository.findCourseByDepartmentNameContaining(deptName).stream().map(CourseMapper::toDTO).toList();
 
     }
 
     @Override
-    public Map<Course, Long> countStudentsByCourse()throws RemoteException{
-        return courseDao.countStudentsByCourse();
+    public Map<CourseDTO, Long> countStudentsByCourse()throws RemoteException{
+        return courseRepository.countStudentsByCourse().entrySet().stream().collect(Collectors.toMap(entry -> CourseMapper.toDTO(entry.getKey()),Map.Entry::getValue));
     }
 }

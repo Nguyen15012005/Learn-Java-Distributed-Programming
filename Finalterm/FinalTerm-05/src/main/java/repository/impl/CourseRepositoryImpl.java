@@ -1,18 +1,17 @@
-package dao;
+package repository.impl;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import model.Course;
-import model.Department;
 import util.JPAUtil;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class CourseDao {
+public class CourseRepositoryImpl implements repository.CourseRepository {
+    @Override
     public List<Course> findCoursesByCreditsBetween(int minCredits, int maxCredits){
 
         try (EntityManager em = JPAUtil.getEntityManager()) {
@@ -32,7 +31,8 @@ public class CourseDao {
     }
 
 //    2. Tìm TƯƠNG ĐỐI khóa học (`Course`) thuộc khoa có tên chứa `deptName`
-    public List<Course> findCourseByDepartmentNameContaining(String deptName){
+@Override
+public List<Course> findCourseByDepartmentNameContaining(String deptName){
 
         try (EntityManager em = JPAUtil.getEntityManager()) {
             String jpql =
@@ -56,7 +56,8 @@ public class CourseDao {
     }
 
 //    7. Thống kê số sinh viên theo khóa học
-    public Map<Course, Long> countStudentsByCourse(){
+@Override
+public Map<Course, Long> countStudentsByCourse(){
         try (EntityManager em = JPAUtil.getEntityManager()){
             String jpql = """
             select c, count (distinct s)
