@@ -41,8 +41,8 @@ public class Main {
 //        courseDao.countStudentsByCourse().forEach((k,v)-> System.out.println(k.getTitle()  + ":" + v));
 //        departmentDao.findDepartmentWithMaxBudget().forEach(System.out::println);
 
-//        OnlineSiteDao onlineSiteDao = new OnlineSiteDao();
-//        onlineSiteDao.findOnsiteCourseByDaysContaining("MW").forEach(System.out::println);
+        OnlineSiteDao onlineSiteDao = new OnlineSiteDao();
+        onlineSiteDao.findOnsiteCourseByDaysContaining("MW").forEach(System.out::println);
 
 
         JPAUtil.close();
