@@ -3,6 +3,7 @@ package model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ import java.util.Set;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @ToString(callSuper = true)
-public class Instructor extends Person{
+public class Instructor extends Person implements Serializable {
 
     @Column(name = "HireDate")
     private LocalDateTime hireDate;

@@ -3,6 +3,7 @@ package model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public abstract class Course {
+public abstract class Course implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include

@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,7 +22,7 @@ import java.util.Set;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @Entity
 @ToString(callSuper = true)
-public class Student extends Person{
+public class Student extends Person implements Serializable {
 
     @ToString.Exclude
     @Column(name = "EnrollmentDate")

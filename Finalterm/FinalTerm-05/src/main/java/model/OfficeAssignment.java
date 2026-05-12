@@ -3,6 +3,7 @@ package model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class OfficeAssignment {
+public class OfficeAssignment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

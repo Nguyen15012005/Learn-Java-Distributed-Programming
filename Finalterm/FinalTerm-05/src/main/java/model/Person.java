@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author TrungNguyen
  * @created 4/22/2026
@@ -19,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "Discriminator")//dùng để phân biệt các class con trong kế thừa JPA khi dùng 1 bảng (SINGLE_TABLE).
-public abstract class Person {
+public abstract class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

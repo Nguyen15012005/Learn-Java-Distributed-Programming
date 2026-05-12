@@ -3,12 +3,14 @@ package model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class StudentGrade {
+public class StudentGrade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
