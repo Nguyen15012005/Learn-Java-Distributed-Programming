@@ -1,7 +1,4 @@
-import dao.CourseDao;
-import dao.DepartmentDao;
-import dao.OnlineCourseDao;
-import dao.StudentDao;
+import dao.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 import util.JPAUtil;
@@ -36,8 +33,10 @@ public class Main {
 //        departmentDao.countCourseByDepartment().forEach((k,v) -> System.out.println(k.getName() + ":" + v));
 
         StudentDao studentDao = new StudentDao();
-        studentDao.findStudentByEnrollmentDateBetween(LocalDateTime.of(2001, 01, 01,00, 00), LocalDateTime.of(2022, 01, 01,00, 00)).forEach(System.out::println);
+//        studentDao.findStudentByEnrollmentDateBetween(LocalDateTime.of(2001, 01, 01,00, 00), LocalDateTime.of(2022, 01, 01,00, 00)).forEach(System.out::println);
 
+        InstructorDao instructorDao = new InstructorDao();
+        instructorDao.findInstructorByOfficeAssignmentTimestampBefore(LocalDateTime.of(2027, 01,01,00, 00)).forEach(System.out::println);
 
         JPAUtil.close();
     }
