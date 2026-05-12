@@ -36,8 +36,17 @@ public class Main {
 //        studentDao.findStudentByEnrollmentDateBetween(LocalDateTime.of(2001, 01, 01,00, 00), LocalDateTime.of(2022, 01, 01,00, 00)).forEach(System.out::println);
 
         InstructorDao instructorDao = new InstructorDao();
-        instructorDao.findInstructorByOfficeAssignmentTimestampBefore(LocalDateTime.of(2027, 01,01,00, 00)).forEach(System.out::println);
+//        instructorDao.findInstructorByOfficeAssignmentTimestampBefore(LocalDateTime.of(2027, 01,01,00, 00)).forEach(System.out::println);
+
+//        courseDao.countStudentsByCourse().forEach((k,v)-> System.out.println(k.getTitle()  + ":" + v));
+//        departmentDao.findDepartmentWithMaxBudget().forEach(System.out::println);
+
+//        OnlineSiteDao onlineSiteDao = new OnlineSiteDao();
+//        onlineSiteDao.findOnsiteCourseByDaysContaining("MW").forEach(System.out::println);
+
 
         JPAUtil.close();
+
+
     }
 }

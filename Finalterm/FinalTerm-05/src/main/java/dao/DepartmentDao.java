@@ -6,6 +6,7 @@ import model.Department;
 import util.JPAUtil;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -32,6 +33,29 @@ public class DepartmentDao {
                     (o1, o2) -> o1,
                     LinkedHashMap::new
             ));
+        }
+    }
+
+//    8. Tìm phòng ban (`Department`) có ngân sách lớn nhất
+    public List<Department> findDepartmentWithMaxBudget(){
+        try (EntityManager em = JPAUtil.getEntityManager()) {
+            String jpql =
+                    """
+                    select d
+                    from Department d
+                    where d.budget = (
+                        select max (d2.budget)
+                        from Department d2
+                    )
+                    """;
+//                                  """ cái này sẽ sai khi trường hợp có nhiều max
+//                               select d
+//                               from Department d
+//                               order by d.budget desc
+//                               limit 1
+//                               """;
+            TypedQuery<Department> query = em.createQuery(jpql, Department.class);
+            return query.getResultList();
         }
     }
 }
