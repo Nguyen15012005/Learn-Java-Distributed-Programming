@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e10ec5cb-d235-4cef-b42d-6f79161c5c3e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_finalTerm_08/bai-tap.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_finalTerm_08/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_finalTerm_08/dependencies.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_finalTerm_08/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CreateDBSchema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/entity/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/entity/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/entity/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/entity/Song.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/config/JPAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/repository/impl/AlbumRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Finalterm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Finalterm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/dto/AlbumDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/mapper/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/network/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/network/CommandType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/network/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/network/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/network/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/repository/AlbumRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/service/impl/AlbumService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/infrastructure/service/impl/AlbumServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/infrastructure/repository/impl/AlbumRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/repository/impl/AlbumRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Midterm/Midterm-1-Northwind" beforeDir="false" afterPath="$PROJECT_DIR$/../../Midterm/Midterm-1-Northwind" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +25,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="39" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,10 +39,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -56,9 +54,9 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3DkN67eGd83mnG0S5kzJdPmakJa" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -70,10 +68,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AlbumRepositoryImpl.executor": "Run",
+    "Application.Client.executor": "Run",
     "Application.CreateDBSchema.executor": "Run",
+    "Application.Server.executor": "Run",
+    "Maven.FinalTerm-08 [clean].executor": "Run",
+    "Maven.FinalTerm-08 [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -97,17 +100,36 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="infrastructure.service.impl" />
+      <recent name="infrastructure.repository" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="core.dto" />
+      <recent name="infrastructure.service.impl" />
       <recent name="core.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AlbumRepositoryImpl">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="AlbumRepositoryImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="infrastructure.repository.impl.AlbumRepositoryImpl" />
       <module name="FinalTerm-08" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="infrastructure.repository.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="infrastructure.network.Client" />
+      <module name="FinalTerm-08" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="infrastructure.network.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,8 +144,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="infrastructure.network.Server" />
+      <module name="FinalTerm-08" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="infrastructure.network.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.AlbumRepositoryImpl" />
         <item itemvalue="Application.CreateDBSchema" />
       </list>
@@ -144,7 +181,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1778822133084</updated>
-      <workItem from="1778822134472" duration="3586000" />
+      <workItem from="1778822134472" duration="8424000" />
+      <workItem from="1778840877956" duration="4858000" />
     </task>
     <servers />
   </component>
