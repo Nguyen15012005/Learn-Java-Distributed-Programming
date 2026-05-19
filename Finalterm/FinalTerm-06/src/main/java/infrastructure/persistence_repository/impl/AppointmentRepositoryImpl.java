@@ -31,7 +31,6 @@ public class AppointmentRepositoryImpl implements AppointmentRepository {
         return false;
     }
 
-    @Override
     public List<Object[]> getAppointmentDetails(){
 
         try (EntityManager em = JPAUtil.getEntityManager()){

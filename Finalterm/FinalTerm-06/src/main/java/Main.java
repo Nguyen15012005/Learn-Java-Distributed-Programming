@@ -2,7 +2,6 @@ import core.domain.Status;
 import core.dto.AppointmentDTO;
 import infrastructure.persistence_repository.AppointmentRepository;
 import infrastructure.persistence_repository.impl.AppointmentRepositoryImpl;
-import infrastructure.service.AppointmentService;
 import infrastructure.service.impl.AppointmentServiceImpl;
 
 import java.rmi.RemoteException;

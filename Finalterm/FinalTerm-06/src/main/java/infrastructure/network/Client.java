@@ -2,14 +2,10 @@ package infrastructure.network;
 
 import core.domain.Status;
 import core.dto.AppointmentDTO;
-import infrastructure.service.AppointmentService;
-import infrastructure.service.impl.AppointmentServiceImpl;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.List;
 

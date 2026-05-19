@@ -42,6 +42,7 @@ public class Server {
                                case GET_DOCTOR_WORKLOAD -> {
                                    reponse = new Reponse(true, "Lấy workload thành công", appointmentService.getDoctorWorkload());
                                }
+//                               case -> {}
 
                                default -> {
                                    reponse = new Reponse(false, "Command không hợp lệ",null);
