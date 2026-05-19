@@ -1,4 +1,4 @@
-package network;
+package infrastructure.network;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
