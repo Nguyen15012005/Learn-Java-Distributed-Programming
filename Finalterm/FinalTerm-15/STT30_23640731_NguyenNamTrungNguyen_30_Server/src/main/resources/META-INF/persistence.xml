@@ -5,11 +5,12 @@
              version="3.2">
     <persistence-unit name="mariadb-pu">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>core.entity.Person</class>
-        <class>core.entity.Doctor</class>
-        <class>core.entity.Patient</class>
-        <class>core.entity.Appointment</class>
-        <class>core.entity.AppointmentID</class>
+
+        <class>entity.Person</class>
+        <class>entity.Patient</class>
+        <class>entity.Doctor</class>
+        <class>entity.Appointment</class>
+        <class>entity.</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver"
                       value="org.mariadb.jdbc.Driver"/>
